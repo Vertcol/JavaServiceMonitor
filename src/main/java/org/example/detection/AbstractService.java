@@ -1,18 +1,21 @@
 package org.example.detection;
 
+import org.example.notify.Notification;
 import org.example.notify.Notifier;
 
 public abstract class AbstractService {
-    private String name;
-    private String hostAdress;
-    private Notifier notifier;
+    protected String name;
+    protected String hostAdress;
+    protected Notifier notifier;
 
     public AbstractService(String name, String hostAdress, Notifier notifier) {
         this.name = name;
         this.hostAdress = hostAdress;
         this.notifier = notifier;
     }
-
+    public void callNotifier() {
+        this.notifier.notifyDowntime(new Notification("HHS website", "Service unreachable"));
+    }
     public boolean serviceOkay() {
         return serviceAvailable() && serviceNormalResonseTime();
     }

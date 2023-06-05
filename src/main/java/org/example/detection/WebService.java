@@ -1,6 +1,7 @@
 package org.example.detection;
 
 import org.example.notify.Notifier;
+import org.example.utility.HTTPrequest;
 
 public class WebService extends AbstractService {
 
@@ -10,6 +11,7 @@ public class WebService extends AbstractService {
 
     @Override
     public boolean serviceAvailable() {
-        return true;
+        HTTPrequest request = new HTTPrequest(super.hostAdress);
+        return request.execute();
     }
 }

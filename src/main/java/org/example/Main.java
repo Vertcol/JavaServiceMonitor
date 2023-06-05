@@ -1,10 +1,25 @@
 package org.example;
 
 import org.example.detection.Downdetector;
+import org.example.detection.WebService;
+import org.example.notify.ConsoleSubscriber;
+import org.example.notify.Notification;
+import org.example.notify.Notifier;
+
+import java.util.concurrent.TimeUnit;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Downdetector detector = new Downdetector();
-        //detector.addService();
+
+        Notifier hhs_notifier = new Notifier();
+        hhs_notifier.addSubscriber(new ConsoleSubscriber());
+        detector.addService(new WebService("HHS", "https://www.dehaagsehogeschool.nl/", hhs_notifier));
+
+        while (true) {
+            detector.detect();
+            TimeUnit.SECONDS.sleep(10);
+        }
+
     }
 }

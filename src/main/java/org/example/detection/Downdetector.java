@@ -8,7 +8,7 @@ public class Downdetector {
     public void detect() {
         for (AbstractService service: services) {
             if (!service.serviceOkay()) {
-                service.notifyAll();
+                service.callNotifier();
             }
         }
     }

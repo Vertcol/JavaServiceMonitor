@@ -14,6 +14,8 @@ public class Notifier {
     }
 
     public void notifyDowntime(Notification notification) {
-
+        for (Subscriber subscriber: subscribers) {
+            subscriber.notifyDowntime(notification);
+        }
     }
 }
