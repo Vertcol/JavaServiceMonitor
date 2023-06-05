@@ -11,7 +11,7 @@ public class HTTPtest {
         HTTPrequest request2 = new HTTPrequest("http://17908293.com");
         Assertions.assertFalse(request2.execute());
 
-        HTTPrequest request3 = new HTTPrequest("http://hytale.com");
-        Assertions.assertFalse(request3.execute());
+        HTTPrequest request3 = new HTTPrequest("https://hytale.com/");
+        Assertions.assertTrue(request3.execute());
     }
 }
