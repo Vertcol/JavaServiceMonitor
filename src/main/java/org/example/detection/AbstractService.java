@@ -14,7 +14,7 @@ public abstract class AbstractService {
         this.notifier = notifier;
     }
     public void callNotifier() {
-        this.notifier.notifyDowntime(new Notification("HHS website", "Service unreachable"));
+        this.notifier.notifyDowntime(new Notification(name, "Service unreachable"));
     }
     public boolean serviceOkay() {
         return serviceAvailable() && serviceNormalResonseTime();
