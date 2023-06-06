@@ -20,9 +20,7 @@ public abstract class AbstractService {
         return serviceAvailable() && serviceNormalResonseTime();
     }
 
-    public boolean serviceAvailable() {
-        return true;
-    }
+    public abstract boolean serviceAvailable();
 
     public boolean serviceNormalResonseTime() {
         return true;
