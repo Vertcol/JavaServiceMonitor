@@ -18,7 +18,7 @@ public class Downdetector {
         if (services_with_errors.size() == 0) {
             System.out.println("[" + new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date()) + "] All services operational");
         } else {
-            System.out.println("[" + new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date()) + "] ERROR: Problems detected with the following services:");
+            System.out.println("[" + new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date()) + "] Problems detected with the following services:");
             for (AbstractService service: services_with_errors) {
                 service.callNotifier();
             }
