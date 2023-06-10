@@ -1,0 +1,14 @@
+default_excludes: true
+
+components: []
+languages:
+  - name: "Java"
+
+dependencychecker:
+blacklist: []
+
+# architecture:
+# enabled: true
+
+thirdpartyfindings:
+enabled: true
