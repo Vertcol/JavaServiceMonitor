@@ -2,7 +2,6 @@ package org.example;
 
 import org.example.detection.Downdetector;
 import org.example.detection.WebService;
-import org.example.notify.Notification;
 import org.example.notify.Notifier;
 import org.example.notify.TestSubscriber;
 

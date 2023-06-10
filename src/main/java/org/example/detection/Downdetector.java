@@ -14,11 +14,11 @@ public class Downdetector {
                 services_with_errors.add(service);
             }
         }
-
+        System.out.print("[" + new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date()) + "]");
         if (services_with_errors.size() == 0) {
-            System.out.println("[" + new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date()) + "] All services operational");
+            System.out.println(" All services operational");
         } else {
-            System.out.println("[" + new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date()) + "] Problems detected with the following services:");
+            System.out.println(" Problems detected with the following services:");
             for (AbstractService service: services_with_errors) {
                 service.callNotifier();
             }
